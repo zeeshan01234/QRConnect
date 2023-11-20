@@ -15,16 +15,16 @@ const onGenerateSubmit = (e) => {
     alert("Please enter a URL");
   } else {
     showSpinner();
-    // Show spinner for 1 sec
+  // Show spinner for 1 sec
     setTimeout(() => {
       hideSpinner();
       generateQRCode(url, size);
       showScanner();
-      // Generate the save button after the qr code image src is ready
+  // Generate the save button after the qr code image src is ready
       setTimeout(() => {
         // Get save url
         const saveUrl = qr.querySelector("canvas").toDataURL();
-        // Create save button
+  // Create save button
         createSaveBtn(saveUrl);
       }, 50);
     }, 1000);
